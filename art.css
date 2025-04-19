@@ -1,0 +1,438 @@
+html {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: white;
+}
+
+/* Make sure body and container are transparent */
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 20px;
+    width: 60%;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.background-banners {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.banner-left {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: auto;
+    object-fit: contain;
+}
+
+.banner-right {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: auto;
+    object-fit: contain;
+}
+
+.commission-box {
+    position: fixed;
+    left: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.37);
+}
+
+.commission-box h3 {
+    margin: 0 0 10px 0;
+    font-size: 1em;
+}
+
+.commission-box a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.commission-box a:hover {
+    color: white;
+}
+
+@media screen and (max-width: 1200px) { /* Adjust this breakpoint as needed */
+    .commission-box {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        transform: none;
+        width: 100%;
+        margin: 0;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        padding: 10px;
+        z-index: 1000;
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.37);
+    }
+
+    .commission-box h3 {
+        font-size: 0.9em;
+        margin-bottom: 5px;
+    }
+
+    .commission-box p {
+        font-size: 0.8em;
+        margin: 5px 0;
+    }
+
+    /* Adjust body padding to prevent content from being hidden behind the box */
+    body {
+        padding-bottom: 100px;
+    }
+}
+
+.category {
+    background-color: black;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.action-button {
+    background-color: black;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Navigation Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.action-button {
+    background-color: black;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.action-button:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* Categories */
+.category {
+    background-color: black;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.category h2 {
+    margin-top: 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Subcategory Buttons */
+.subcategory-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.sub-button {
+    background-color: black;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.sub-button:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* Art Grid */
+
+/* Hide all images by default when a category is selected */
+#original:target ~ .content-preview .art-grid a {
+    display: none;
+}
+
+#original:target ~ .content-preview .art-grid a img[data-category="original"] {
+    display: block;
+}
+
+#original:target ~ .content-preview .art-grid a:has(img[data-category="original"]) {
+    display: block;
+}
+
+#fanart:target ~ .content-preview .art-grid a {
+    display: none;
+}
+
+#fanart:target ~ .content-preview .art-grid a img[data-category="fanart"] {
+    display: block;
+}
+
+#fanart:target ~ .content-preview .art-grid a:has(img[data-category="fanart"]) {
+    display: block;
+}
+
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*4 columns */
+    gap: 15px;
+}
+
+.art-thumbnail {
+    width: 100%;
+    aspect-ratio: 1/1; /* Forces square */
+    object-fit: cover; /* crops the image to fill the square */
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* Comic Grid */
+.comic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.comic-item {
+    text-align: center;
+}
+
+.comic-cover {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+}
+
+/* Music Grid */
+.audio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.audio-item {
+    background-color: black;
+    border: 1px solid #ccc;
+    padding: 10px; /* Reduced from 15px */
+    min-width: 0;S
+}
+
+.audio-item h3 {
+    margin: 5px 0; /* Reduced margin around title */
+}
+
+audio {
+    width: 100%;
+    margin: 5px 0; /* Reduced margin around audio player */
+}
+
+/* This ensures 3 columns maximum */
+@media (min-width: 800px) {
+    .audio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Writing Items */
+.writing-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.writing-item h3 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    color: white;
+}
+
+/* Add these styles to your art.css */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Changed from 2 to 4 columns */
+    gap: 15px; /* Slightly reduced gap to accommodate more items */
+}
+
+/* Rest remains the same */
+.video-item {
+    text-align: center;
+}
+
+.video-container {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    border: 1px solid #ccc;
+    background-color: black;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.video-item h3 {
+    margin-top: 10px;
+    font-size: 0.9em; /* Made slightly smaller to fit better in narrower columns */
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+.project-link {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.project-link:hover {
+    color: white;
+}
+
+.centered-title {
+    text-align: center;
+    border-bottom: none !important; /* Removes the border */
+    padding-bottom: 0 !important; /* Removes the padding that was for the border */
+}
+
+.narrow-category {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.external-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.external-button {
+    background-color: black;
+    padding: 12px 25px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+}
+
+.external-button:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* STORY MODALS */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal:target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: black;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 800px;
+    width: 80%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-close {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.modal-close:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+.story-text {
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.story-frame {
+    width: 100%;
+    height: 60vh; /* Adjust height as needed */
+    border: none;
+    background: transparent;
+}

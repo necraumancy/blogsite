@@ -1,0 +1,97 @@
+/* blog.css */
+html {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: white;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 20px;
+    width: 60%; 
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+/* Background Banners */
+.background-banners {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.banner-left {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: auto;
+    object-fit: contain;
+}
+
+.banner-right {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: auto;
+    object-fit: contain;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Rest of your CSS remains the same */
+
+.blog-post {
+    background-color: black;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.post-date {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.post-content {
+    line-height: 1.6;
+}
+
+.button-container {
+    
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.action-button {
+    background-color: black;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.action-button:hover {
+    background-color: #ccc;
+    color: #000;
+}
