@@ -253,20 +253,19 @@ body {
 .audio-item {
     background-color: black;
     border: 1px solid #ccc;
-    padding: 10px; /* Reduced from 15px */
-    min-width: 0;S
+    padding: 10px;
+    min-width: 0;
 }
 
 .audio-item h3 {
-    margin: 5px 0; /* Reduced margin around title */
+    margin: 5px 0;
 }
 
 audio {
     width: 100%;
-    margin: 5px 0; /* Reduced margin around audio player */
-}
+    margin: 5px 0;
 
-/* This ensures 3 columns maximum */
+/* 3 columns maximum */
 @media (min-width: 800px) {
     .audio-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -294,14 +293,12 @@ audio {
     color: white;
 }
 
-/* Add these styles to your art.css */
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Changed from 2 to 4 columns */
-    gap: 15px; /* Slightly reduced gap to accommodate more items */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
 
-/* Rest remains the same */
 .video-item {
     text-align: center;
 }
@@ -325,7 +322,7 @@ audio {
 
 .video-item h3 {
     margin-top: 10px;
-    font-size: 0.9em; /* Made slightly smaller to fit better in narrower columns */
+    font-size: 0.9em;
 }
 
 /* Project Grid */
@@ -351,8 +348,8 @@ audio {
 
 .centered-title {
     text-align: center;
-    border-bottom: none !important; /* Removes the border */
-    padding-bottom: 0 !important; /* Removes the padding that was for the border */
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
 }
 
 .narrow-category {
@@ -435,4 +432,4 @@ audio {
     height: 60vh; /* Adjust height as needed */
     border: none;
     background: transparent;
-}
+} }
